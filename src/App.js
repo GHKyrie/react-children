@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Display from './components/Display.jsx';
+import WhenTruthy from "./components/WhenTruthy";
+import WhenFalsy from "./components/WhenFalsy";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const age = 22;
+
+const App = () => {
+    return (
+        <Display ifTruthy={age >= 21}>
+            <WhenTruthy>
+                <h1>You can Enter</h1>
+            </WhenTruthy>
+            <WhenFalsy>
+                <h1>Beat it Kid</h1>
+            </WhenFalsy>
+        </Display>
+    )
 }
 
 export default App;
